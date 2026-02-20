@@ -1,16 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx58pveiadblh"]
+[gd_scene load_steps=5 format=3 uid="uid://cx58pveiadblh"]
 
 [ext_resource type="Texture2D" uid="uid://w5inrv4yxl45" path="res://assets/Pixel UI/Panels/Panel_1.png" id="1_a7tty"]
 [ext_resource type="Script" uid="uid://ca1gt63ytgfy5" path="res://scripts/opponent.gd" id="1_e5dxu"]
 [ext_resource type="PackedScene" uid="uid://bpaeooqpii2g7" path="res://scenes/Card.tscn" id="2_e5dxu"]
 
+[sub_resource type="GDScript" id="GDScript_1ucok"]
+script/source = "extends Control
+
+var C"
+
 [node name="Opponent" type="Control"]
 texture_filter = 1
 layout_mode = 3
-anchors_preset = 0
-offset_top = 3.0
-offset_right = 391.0
-offset_bottom = 301.0
+anchor_left = 0.153
+anchor_top = 0.21
+anchor_right = 0.153
+anchor_bottom = 0.21
+offset_left = -195.84
+offset_top = -150.2
+offset_right = 195.16
+offset_bottom = 149.8
 script = ExtResource("1_e5dxu")
 
 [node name="Panel" type="TextureRect" parent="."]
@@ -25,7 +34,7 @@ offset_bottom = -1.0
 texture = ExtResource("1_a7tty")
 expand_mode = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="Name" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.121
@@ -41,73 +50,76 @@ text = "NAME NAME"
 [node name="Lives" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.144
-anchor_top = 0.272
-anchor_right = 0.144
-anchor_bottom = 0.272
-offset_left = 0.0719948
-offset_top = -0.0240021
-offset_right = 136.072
-offset_bottom = 49.976
+anchor_left = 0.32
+anchor_top = 0.356
+anchor_right = 0.32
+anchor_bottom = 0.356
+offset_left = -67.888
+offset_top = -25.088
+offset_right = 68.112
+offset_bottom = 24.912
 
 [node name="Headshot" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.609
-anchor_top = 0.114
-anchor_right = 0.609
-anchor_bottom = 0.114
-offset_left = 0.225647
-offset_top = 0.256001
-offset_right = 96.2256
-offset_bottom = 94.256
+anchor_left = 0.622
+anchor_top = 0.111
+anchor_right = 0.87
+anchor_bottom = 0.429
+offset_left = 0.192688
+offset_top = 0.143997
+offset_right = 0.179413
+offset_bottom = 0.0159912
 
 [node name="Hand" type="Control" parent="Panel"]
 layout_mode = 1
-anchor_left = 0.108
-anchor_top = 0.5
-anchor_right = 0.108
-anchor_bottom = 0.5
-offset_left = -13.144
-offset_top = -11.0
-offset_right = 334.856
-offset_bottom = 123.0
+anchor_left = 0.496
+anchor_top = 0.659
+anchor_right = 0.496
+anchor_bottom = 0.659
+offset_left = -162.026
+offset_top = -67.064
+offset_right = 161.974
+offset_bottom = 66.936
 
 [node name="Card1" parent="Panel/Hand" instance=ExtResource("2_e5dxu")]
 layout_mode = 1
-anchor_left = 0.027
-anchor_top = 0.0
-anchor_right = 0.3
-anchor_bottom = 0.888
-offset_left = -0.0641975
-offset_top = -5.0
-offset_right = -0.0681992
-offset_bottom = -0.0120163
+anchor_left = 0.037
+anchor_top = 0.022
+anchor_right = 0.31
+anchor_bottom = 0.948
+offset_left = 0.124
+offset_top = 0.0519998
+offset_right = 0.120003
+offset_bottom = -0.0520325
 grow_horizontal = 1
 grow_vertical = 1
+script = SubResource("GDScript_1ucok")
 
 [node name="Card2" parent="Panel/Hand" instance=ExtResource("2_e5dxu")]
 layout_mode = 1
-anchor_left = 0.333
-anchor_top = 0.022
-anchor_right = 0.61
-anchor_bottom = 0.918
-offset_left = 0.115997
-offset_top = -6.948
-offset_right = -0.279999
-offset_bottom = -0.0120087
+anchor_left = 0.377
+anchor_top = 0.03
+anchor_right = 0.63
+anchor_bottom = 0.978
+offset_left = -5.148
+offset_top = -0.02
+offset_right = -0.12001
+offset_bottom = -1.052
 grow_horizontal = 1
 grow_vertical = 1
+script = SubResource("GDScript_1ucok")
 
 [node name="Card3" parent="Panel/Hand" instance=ExtResource("2_e5dxu")]
 layout_mode = 1
-anchor_left = 0.639
-anchor_top = 0.015
-anchor_right = 0.912
-anchor_bottom = 0.925
-offset_left = -0.0402222
-offset_top = -4.00999
-offset_right = -0.04422
-offset_bottom = 0.0400009
+anchor_left = 0.685
+anchor_top = 0.045
+anchor_right = 0.964
+anchor_bottom = 0.985
+offset_left = 0.0599823
+offset_top = -0.0300002
+offset_right = -0.0320129
+offset_bottom = 0.00999451
 grow_horizontal = 1
 grow_vertical = 1
+script = SubResource("GDScript_1ucok")

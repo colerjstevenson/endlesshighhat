@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://chjdkdiahykrf" path="res://scripts/gameroot.gd" id="1_rvslj"]
 [ext_resource type="Texture2D" uid="uid://bgdkcnsehal2k" path="res://assets/background.png" id="2_0bbpv"]
-[ext_resource type="PackedScene" uid="uid://bpaeooqpii2g7" path="res://scenes/Card.tscn" id="3_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://cx58pveiadblh" path="res://scenes/Opponent.tscn" id="3_rarhs"]
+[ext_resource type="Script" uid="uid://c6du3hbrr25kh" path="res://scripts/hand.gd" id="4_hand"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rarhs"]
 atlas = ExtResource("2_0bbpv")
@@ -40,22 +40,37 @@ offset_right = 0.279968
 offset_bottom = 0.519958
 
 [node name="Opponent1" parent="TopArea" instance=ExtResource("3_rarhs")]
-offset_left = -4.0
-offset_top = 7.0
-offset_right = 400.0
-offset_bottom = 314.0
+layout_mode = 1
+anchor_left = 0.166
+anchor_top = 0.5
+anchor_right = 0.166
+anchor_bottom = 0.5
+offset_left = -202.075
+offset_top = -141.02
+offset_right = 201.925
+offset_bottom = 165.98
 
 [node name="Opponent2" parent="TopArea" instance=ExtResource("3_rarhs")]
-offset_left = 418.0
-offset_top = 5.0
-offset_right = 838.0
-offset_bottom = 318.0
+layout_mode = 1
+anchor_left = 0.495
+anchor_top = 0.5
+anchor_right = 0.495
+anchor_bottom = 0.5
+offset_left = -209.392
+offset_top = -140.02
+offset_right = 210.608
+offset_bottom = 172.98
 
 [node name="Opponent3" parent="TopArea" instance=ExtResource("3_rarhs")]
-offset_left = 858.0
-offset_top = 5.0
-offset_right = 1268.0
-offset_bottom = 315.0
+layout_mode = 1
+anchor_left = 0.827
+anchor_top = 0.543
+anchor_right = 0.827
+anchor_bottom = 0.543
+offset_left = -204.542
+offset_top = -154.986
+offset_right = 205.458
+offset_bottom = 155.014
 
 [node name="MiddleArea" type="Control" parent="."]
 layout_mode = 1
@@ -77,75 +92,11 @@ offset_bottom = -1.0
 
 [node name="Hand" type="Control" parent="BottomArea"]
 layout_mode = 1
-anchor_left = 0.315
-anchor_top = 0.146
-anchor_right = 0.315
-anchor_bottom = 0.146
-offset_left = -0.515045
-offset_top = 0.0919971
-offset_right = 495.485
-offset_bottom = 150.092
-
-[node name="Card1" parent="BottomArea/Hand" instance=ExtResource("3_0bbpv")]
-layout_mode = 1
-anchor_left = 0.159
-anchor_right = 0.357
-anchor_bottom = 1.0
-offset_left = 0.135994
-offset_top = -3.0
-offset_right = -0.0720062
-offset_bottom = 4.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Card2" parent="BottomArea/Hand" instance=ExtResource("3_0bbpv")]
-layout_mode = 1
-anchor_left = 0.317
-anchor_top = 0.067
-anchor_right = 0.518
-anchor_bottom = 1.0
-offset_left = -0.231995
-offset_top = -0.0499992
-offset_right = 0.071991
-offset_bottom = 7.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Card3" parent="BottomArea/Hand" instance=ExtResource("3_0bbpv")]
-layout_mode = 1
-anchor_left = 0.452
-anchor_top = 0.067
-anchor_right = 0.647
-anchor_bottom = 1.0
-offset_left = -0.192017
-offset_top = -0.0500002
-offset_right = 0.0879822
-offset_bottom = 7.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Card4" parent="BottomArea/Hand" instance=ExtResource("3_0bbpv")]
-layout_mode = 1
-anchor_left = 0.565
-anchor_top = 0.06
-anchor_right = 0.772
-anchor_bottom = 1.0
-offset_left = -0.23999
-offset_top = 0.0
-offset_right = 0.0879822
-offset_bottom = 8.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Card5" parent="BottomArea/Hand" instance=ExtResource("3_0bbpv")]
-layout_mode = 1
-anchor_left = 0.7
-anchor_top = 0.053
-anchor_right = 0.901
-anchor_bottom = 1.0
-offset_left = -0.200012
-offset_top = 0.0499997
-offset_right = 0.104004
-offset_bottom = 8.0
-grow_horizontal = 1
-grow_vertical = 1
+anchor_left = 0.155
+anchor_right = 0.874
+anchor_bottom = 0.712
+offset_left = 154.445
+offset_top = -9.0
+offset_right = -270.594
+offset_bottom = 0.0240021
+script = ExtResource("4_hand")

@@ -6,14 +6,27 @@ var hand_size: int = 0
 var hand: Array = []
 var lives: int = 3
 
-func _ready() -> void:
-	#set visible to false until game starts
-    $Panel.visible = true
-    $NameLabel.text = western_name_maker()
+func setup():
+    hand.clear()
+    lives = 3
+    hand_size = 3
+    $Name.text = western_name_maker()
 
-    $Panel/Panel/Hand/Card1.show_back()
-    $Panel/Panel/Hand/Card2.show_back()
-    $Panel/Panel/Hand/Card3.show_back()
+    #add cards to hand
+    for i in range(hand_size):
+        var card = Deck.draw_card()
+        hand.append(card)
+        $Hand.add_child(card)
+
+
+# arrange cards nicely in hand
+# based on hand size and card size
+func space_hand():
+    for i in range(hand.size()):
+        var card = hand[i]
+        card.rect_position = Vector2(10 + i * 110, 10)  # Adjust spacing as needed
+        
+
 
     
 

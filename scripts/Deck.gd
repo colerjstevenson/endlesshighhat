@@ -9,12 +9,14 @@ var ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "kin
 
 func _ready() -> void:
 	# Create a standard deck of 52 cards
+	print("Creating deck...")
 	for suit in suts:
 		for rank in ranks:
 			var card_scene = preload("res://scenes/Card.tscn")
 			var card_instance = card_scene.instantiate() as Card
 			card_instance.setup(rank, suit)
 			cards.append(card_instance)
+	print("Deck created with %d cards" % cards.size())
 
 
 

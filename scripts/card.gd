@@ -30,12 +30,20 @@ func setup(r: String, s: String, f:bool=false) -> void:
 	suit = s.to_lower()
 	is_flipped = f
 	
-	card_face_texture = load("res://assets/cards/%s_of_%s.png" % [rank, suit])
+	# Load card face texture from correct path
+	var suit_folder = suit.capitalize()
+	card_face_texture = load("res://assets/Cards/%s/%s_of_%s.png" % [suit_folder, rank, suit])
 	$front.texture = card_face_texture
 	
-
-	card_back_texture = load("res://assets/Decks/deck_1_blue.png")
+	# Load card back texture
+	card_back_texture = load("res://assets/Cards/Decks/deck_1_blue.png")
 	$back.texture = card_back_texture
+	
+	# Show the appropriate side
+	if is_flipped:
+		show_back()
+	else:
+		show_front()
 
 
 
@@ -46,15 +54,13 @@ func set_selected(selected: bool) -> void:
 	if is_selected == selected:
 		return  # No change
 	
-	# pop up a little bit if selected
+	is_selected = selected
+	
+	# Emit signals so the hand can handle positioning
 	if selected:
-		position.y += -10
 		emit_signal("card_selected", self)
 	else:
-		position.y += 10
 		emit_signal("card_deselected", self)
-
-	is_selected = selected
 
 func get_value() -> int:
 	"""Get the numeric value of the card for scoring"""

@@ -1,3 +1,6 @@
 extends Node
 
-var opponents
+var player_hand: Hand = null
+var opponents = []
+var piles = []
+
