@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpaeooqpii2g7"]
+
+[ext_resource type="Script" uid="uid://tikm0ogt03ui" path="res://scripts/card.gd" id="1_tgmmg"]
+[ext_resource type="Texture2D" uid="uid://bkpl23e8lbee6" path="res://assets/Cards/Clubs/2_of_clubs.png" id="2_4dx8l"]
+[ext_resource type="Texture2D" uid="uid://ct818hg87vxwl" path="res://assets/Cards/Decks/deck_1_red.png" id="3_4dx8l"]
+
+[node name="Card" type="Control"]
+texture_filter = 3
+layout_mode = 3
+anchor_left = 0.033
+anchor_top = 0.08
+anchor_right = 0.033
+anchor_bottom = 0.08
+offset_left = -42.24
+offset_top = -57.6
+offset_right = 41.76
+offset_bottom = 57.4
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgmmg")
+
+[node name="front" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.014
+anchor_bottom = 0.99
+offset_right = -0.0580139
+offset_bottom = 0.0799866
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4dx8l")
+expand_mode = 1
+
+[node name="back" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.11799
+offset_bottom = -1.07001
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4dx8l")
+expand_mode = 1

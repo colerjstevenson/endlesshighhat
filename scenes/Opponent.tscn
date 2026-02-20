@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx58pveiadblh"]
+
+[ext_resource type="Texture2D" uid="uid://w5inrv4yxl45" path="res://assets/Pixel UI/Panels/Panel_1.png" id="1_a7tty"]
+[ext_resource type="Script" uid="uid://ca1gt63ytgfy5" path="res://scripts/opponent.gd" id="1_e5dxu"]
+[ext_resource type="PackedScene" uid="uid://bpaeooqpii2g7" path="res://scenes/Card.tscn" id="2_e5dxu"]
+
+[node name="Opponent" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 3.0
+offset_right = 391.0
+offset_bottom = 301.0
+script = ExtResource("1_e5dxu")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -0.677002
+offset_bottom = -1.0
+texture = ExtResource("1_a7tty")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121
+anchor_top = 0.132
+anchor_right = 0.121
+anchor_bottom = 0.132
+offset_left = 0.122997
+offset_top = -0.144001
+offset_right = 187.123
+offset_bottom = 51.856
+text = "NAME NAME"
+
+[node name="Lives" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144
+anchor_top = 0.272
+anchor_right = 0.144
+anchor_bottom = 0.272
+offset_left = 0.0719948
+offset_top = -0.0240021
+offset_right = 136.072
+offset_bottom = 49.976
+
+[node name="Headshot" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.609
+anchor_top = 0.114
+anchor_right = 0.609
+anchor_bottom = 0.114
+offset_left = 0.225647
+offset_top = 0.256001
+offset_right = 96.2256
+offset_bottom = 94.256
+
+[node name="Hand" type="Control" parent="Panel"]
+layout_mode = 1
+anchor_left = 0.108
+anchor_top = 0.5
+anchor_right = 0.108
+anchor_bottom = 0.5
+offset_left = -13.144
+offset_top = -11.0
+offset_right = 334.856
+offset_bottom = 123.0
+
+[node name="Card1" parent="Panel/Hand" instance=ExtResource("2_e5dxu")]
+layout_mode = 1
+anchor_left = 0.027
+anchor_top = 0.0
+anchor_right = 0.3
+anchor_bottom = 0.888
+offset_left = -0.0641975
+offset_top = -5.0
+offset_right = -0.0681992
+offset_bottom = -0.0120163
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Card2" parent="Panel/Hand" instance=ExtResource("2_e5dxu")]
+layout_mode = 1
+anchor_left = 0.333
+anchor_top = 0.022
+anchor_right = 0.61
+anchor_bottom = 0.918
+offset_left = 0.115997
+offset_top = -6.948
+offset_right = -0.279999
+offset_bottom = -0.0120087
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Card3" parent="Panel/Hand" instance=ExtResource("2_e5dxu")]
+layout_mode = 1
+anchor_left = 0.639
+anchor_top = 0.015
+anchor_right = 0.912
+anchor_bottom = 0.925
+offset_left = -0.0402222
+offset_top = -4.00999
+offset_right = -0.04422
+offset_bottom = 0.0400009
+grow_horizontal = 1
+grow_vertical = 1
